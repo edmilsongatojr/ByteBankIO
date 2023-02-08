@@ -18,7 +18,7 @@ partial class Program
                 var linha = leitor.ReadLine();
                 var contaCorrente = ConverterStringParaContaCorrente(linha);
 
-                var msg = $"Conta numero {contaCorrente.Numero}, Agencia: {contaCorrente.Agencia}, Saldo: {contaCorrente.Saldo} ";
+                var msg = $"Titular: {contaCorrente.Titular} | Conta numero {contaCorrente.Numero}, Agencia: {contaCorrente.Agencia}, Saldo: {contaCorrente.Saldo} ";
                 Console.WriteLine(msg);
             }
         }
@@ -38,7 +38,7 @@ partial class Program
         var saldoComDouble = double.Parse(saldo);
 
         var titular = new Cliente();
-        titular.Nome = nomeTitular; ;
+        titular.Nome = nomeTitular;
 
         var resultado = new ContaCorrente(agenciaComInt, numeroComInt);
         resultado.Depositar(saldoComDouble);
